@@ -2,9 +2,9 @@ package com.avimtoo.springamigoscode.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static jakarta.persistence.GenerationType.SEQUENCE;
 
 @Entity
 @Table(
@@ -36,11 +36,12 @@ public class StudentIdCard {
             length = 15)
     private String cardNumber;
 
-    @OneToOne(cascade = {CascadeType.REMOVE})
+    @OneToOne(cascade = {CascadeType.DETACH})
     @JsonIgnore
     @JoinColumn(
             name = "student_id",
             referencedColumnName ="id",
+            nullable = true,
             foreignKey = @ForeignKey(name = "student_id_fk"))
     private Student student;
 

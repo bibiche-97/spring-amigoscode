@@ -1,14 +1,16 @@
 package com.avimtoo.springamigoscode.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
-import javax.persistence.*;
+import static jakarta.persistence.GenerationType.SEQUENCE;
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+
 
 
 @Entity

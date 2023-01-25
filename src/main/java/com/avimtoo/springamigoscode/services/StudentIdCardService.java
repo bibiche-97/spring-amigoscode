@@ -36,7 +36,7 @@ public class StudentIdCardService {
                 new ResourceNotFoundException("Failled to load student"));
         studentIdCard.setStudent(student);
         StudentIdCard studentIdCard1 = studentIdCardRepository.save(studentIdCard);
-        student.setStudentIdCard(studentIdCard1);
+       // student.setStudentIdCard(studentIdCard1);
         return studentIdCard1;
     }
     public void deleteStudentIdCard(Long id){

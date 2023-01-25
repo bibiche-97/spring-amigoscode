@@ -55,19 +55,17 @@ public class EnrolmentService {
 
 
     }
-/*
-    public void deleteEnrolment(Long id, Long id_course){
-         enrolmentRepository.findById(id,id_course).orElseThrow(()->
+    public void deleteEnrolment(EnrolmentId enrolmentId){
+         enrolmentRepository.findById(enrolmentId).orElseThrow(()->
                  new ResourceNotFoundException("impossible de supprimer cet element"));
-         enrolmentRepository.deleteById(id, id_course);
+         enrolmentRepository.deleteById(enrolmentId);
     }
 
-    public Enrolment updateEnrlment(Enrolment enrolment, Long id, Long id_course){
-        Enrolment enrolment1 = enrolmentRepository.findById(id,id_course).orElseThrow(()->
+    public Enrolment updateEnrlment(Enrolment enrolment,EnrolmentId enrolmentId){
+        Enrolment enrolment1 = enrolmentRepository.findById(enrolmentId).orElseThrow(()->
                 new ResourceNotFoundException("impossible de modifer cet element"));
         enrolment1.setCreatedAt(enrolment.getCreatedAt());
         return  enrolmentRepository.saveAndFlush(enrolment1);
         }
-        */
 
 }

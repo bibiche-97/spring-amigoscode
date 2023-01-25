@@ -11,8 +11,7 @@ import java.util.Optional;
 public interface EnrolmentRepository extends JpaRepository<Enrolment, Long> {
     Optional<Enrolment> findById(EnrolmentId enrolmentId);
 
-   /* Optional<Enrolment> findById(Long id, Long id_course);
+    void deleteById(EnrolmentId enrolmentId);
 
-    void deleteById(Long id, Long id_course);*/
-//    public Enrolment findByEnrolmentId(EnrolmentId enrolmentId);
+
 }

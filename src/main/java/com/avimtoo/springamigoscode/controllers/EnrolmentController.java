@@ -7,8 +7,8 @@ import com.avimtoo.springamigoscode.services.EnrolmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.transaction.Transactional;
+import jakarta.annotation.Resource;
+import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,11 +44,10 @@ public class EnrolmentController {
                                     @PathVariable("id_course") Long id_course){
         return  enrolmentService.addEnrolment(enrolment,id,id_course);
     }
-/*
     @DeleteMapping("/enrolments/{id}/{id_course}")
     public void delete(@PathVariable("id") Long id,
                        @PathVariable("id_course") Long id_course){
-        enrolmentService.deleteEnrolment(id,id_course);
+        enrolmentService.deleteEnrolment(new EnrolmentId(id,id_course));
     }
 
     @PutMapping("/enrolments/{id}/{id_course}")
@@ -56,7 +55,6 @@ public class EnrolmentController {
                             @PathVariable("id") Long id,
                             @PathVariable("id_course") Long id_course)
     {
-        return enrolmentService.updateEnrlment(enrolment,id,id_course);
+        return enrolmentService.updateEnrlment(enrolment,new EnrolmentId(id,id_course));
     }
-    */
 }
